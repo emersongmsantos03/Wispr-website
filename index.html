@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wispr | Network with Agents to Find and Close Deals Faster</title>
+  <meta name="description" content="Wispr is the first compliant, nationwide, advisor-led real estate platform. Network with agents to find and close deals faster." />
+  <link rel="icon" type="image/png" href="images/wispr_Standard.png" />
+  <link rel="apple-touch-icon" href="images/wispr_Standard.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ── HEADER ────────────────────────────────────────── -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        <img src="images/wispr_Standard.png" alt="Wispr" class="nav__logo-img" />
+      </a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#blog">Blogs</a></li>
+      </ul>
+
+      <div class="nav__auth">
+        <a href="#" class="nav__login">Login</a>
+        <a href="#cta" class="btn btn--signup">
+          Sign Up
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.5 9h5M9 6.5l2.5 2.5L9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ──────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+
+        <!-- Left: copy -->
+        <div class="hero__copy">
+          <h1 class="hero__headline">
+            Your clients.<br />
+            Your listings.<br />
+            <span class="hero__headline-gold">Your way.</span>
+          </h1>
+
+          <p class="hero__sub">
+            Starting a Rumr or <strong class="hero__brand-inline"><span class="brand-wis">wis</span><span class="brand-pr">pr</span></strong> creates
+            unique, high-quality value for your clients — and puts you back in control.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#cta" class="btn btn--gold">
+              Sign Up Now
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#why" class="btn btn--hero-ghost">
+              <span class="btn__play" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <circle cx="7" cy="7" r="6.25" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M6 5l3.5 2L6 9V5z" fill="currentColor"/>
+                </svg>
+              </span>
+              See How It Works
+            </a>
+          </div>
+
+          <div class="hero__trust">
+            <div class="trust-pill">
+              <svg class="trust-pill__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm-5.5 12c0-3.038 2.462-5.5 5.5-5.5s5.5 2.462 5.5 5.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+              Advisor-Driven Network
+            </div>
+            <div class="trust-pill">
+              <svg class="trust-pill__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1.5L2.5 4v4c0 3.1 2.3 6 5.5 6.5C11.2 14 13.5 11.1 13.5 8V4L8 1.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+                <path d="M5.5 8l1.8 1.8L10.5 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Secure &amp; Compliant
+            </div>
+            <div class="trust-pill">
+              <svg class="trust-pill__icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M2 12l4.5-4.5L9 10l5-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1.5 13.5h13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <path d="M8 1.5H3a1 1 0 0 0-1 1v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+              Off-Market Opportunities
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: app mockup -->
+        <div class="hero__mockup-wrap">
+          <div class="mockup">
+            <!-- Browser chrome -->
+            <div class="mockup__chrome">
+              <div class="mockup__dots">
+                <span class="mockup__dot mockup__dot--red"></span>
+                <span class="mockup__dot mockup__dot--yellow"></span>
+                <span class="mockup__dot mockup__dot--green"></span>
+              </div>
+              <svg class="mockup__expand" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- App content -->
+            <div class="mockup__body">
+              <div class="mockup__card">
+                <img src="images/wispr_Standard.png" alt="Wispr" class="mockup__logo" />
+                <h3 class="mockup__title">See Wispr in Action</h3>
+                <p class="mockup__desc">
+                  In just 60 seconds, discover how our platform helps
+                  network with agents to find and close deals faster.
+                </p>
+                <a href="#cta" class="btn btn--gold mockup__cta">Start Demo</a>
+                <p class="mockup__join">Not a member? <a href="#cta">Sign Up</a></p>
+              </div>
+
+              <div class="mockup__features">
+                <div class="mockup__feat">
+                  <span class="mockup__feat-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M10 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zM3 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#001D48" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span>Connect with<br /><strong>trusted agents</strong></span>
+                </div>
+                <div class="mockup__feat">
+                  <span class="mockup__feat-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <rect x="2.5" y="2.5" width="15" height="15" rx="3" stroke="#001D48" stroke-width="1.5"/>
+                      <path d="M10 6.5v3.5l2.5 2" stroke="#001D48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span>Discover hidden<br /><strong>opportunities</strong></span>
+                </div>
+                <div class="mockup__feat">
+                  <span class="mockup__feat-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M3 11l4-4 3.5 3.5L15 5" stroke="#001D48" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M2.5 17.5h15" stroke="#001D48" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                  <span>Close more deals,<br /><strong>faster</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video player bar -->
+            <div class="mockup__player">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M4 3l7 4-7 4V3z" fill="currentColor"/>
+              </svg>
+              <div class="mockup__progress">
+                <div class="mockup__progress-fill"></div>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2 4a2 2 0 0 1 2-2h1v10H4a2 2 0 0 1-2-2V4zM8 2h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H8V2z" fill="currentColor" opacity=".5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── WHY WISPR ──────────────────────────────────── -->
+    <section class="why" id="why">
+      <div class="why__inner">
+        <p class="label" data-reveal>Built for advisors. Powered by relationships.</p>
+        <h2 data-reveal data-reveal-delay="100">Why Advisors Choose Wispr</h2>
+
+        <div class="why__grid">
+
+          <div class="why-card" data-reveal data-reveal-delay="0">
+            <div class="why-card__icon why-card__icon--blue">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M14 3a5 5 0 1 1 0 10A5 5 0 0 1 14 3zM4 25c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="#3B6CB7" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Private Network</h3>
+            <p>Collaborate in private groups and digital caravans with trusted advisors across the country.</p>
+          </div>
+
+          <div class="why-card" data-reveal data-reveal-delay="120">
+            <div class="why-card__icon why-card__icon--gold">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <rect x="7" y="12" width="14" height="12" rx="2" stroke="#897447" stroke-width="1.8"/>
+                <path d="M10 12V9a4 4 0 0 1 8 0v3" stroke="#897447" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="14" cy="18" r="1.5" fill="#897447"/>
+              </svg>
+            </div>
+            <h3>Unparalleled Data Control</h3>
+            <p>Share what you want, with who you want, <strong>when you want</strong>, and <strong>how much information you want.</strong></p>
+          </div>
+
+          <div class="why-card" data-reveal data-reveal-delay="240">
+            <div class="why-card__icon why-card__icon--green">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M4 22l6-6 4 4 7-10" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 24h20" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="4" y="4" width="5" height="10" rx="1.5" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width="1.5"/>
+                <rect x="11.5" y="8" width="5" height="6" rx="1.5" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width="1.5"/>
+                <rect x="19" y="6" width="5" height="8" rx="1.5" fill="rgba(34,197,94,.2)" stroke="#22c55e" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3>More Deals, Less Noise</h3>
+            <p>Access off-market inventory and serious buyer demand — without the public marketplace noise.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APP SHOWCASE ──────────────────────────────────── -->
+    <section class="showcase" id="app">
+      <div class="showcase__inner">
+
+        <div class="showcase__header">
+          <p class="label">See it in action</p>
+          <h2>Everything you need. Built into one platform.</h2>
+          <p class="showcase__lead">
+            Wispr is a live, fully-built platform. Here's a look inside.
+          </p>
+        </div>
+
+        <!-- Tab navigation -->
+        <div class="showcase__tabs" role="tablist">
+          <button class="showcase__tab is-active" role="tab" aria-selected="true"  data-tab="0">
+            <span class="showcase__tab-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M2 13l3.5-4 3 3L13 7l3 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="1.5" y="1.5" width="15" height="15" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            Property Marketplace
+          </button>
+          <button class="showcase__tab" role="tab" aria-selected="false" data-tab="1">
+            <span class="showcase__tab-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zM2 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Buyer Marketplace
+          </button>
+          <button class="showcase__tab" role="tab" aria-selected="false" data-tab="2">
+            <span class="showcase__tab-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="6" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M1 15c0-2.761 2.239-5 5-5h6c2.761 0 5 2.239 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Private Groups
+          </button>
+        </div>
+
+        <!-- Tab panels -->
+        <div class="showcase__panels">
+
+          <!-- Panel 0 — Property Marketplace -->
+          <div class="showcase__panel is-active" data-panel="0">
+            <div class="showcase__screen">
+              <div class="showcase__screen-chrome">
+                <span class="mockup__dot mockup__dot--red"></span>
+                <span class="mockup__dot mockup__dot--yellow"></span>
+                <span class="mockup__dot mockup__dot--green"></span>
+              </div>
+              <img
+                src="images/Property Marketplace.png"
+                alt="Wispr Property Marketplace — browse off-market and pre-market listings"
+                class="showcase__img"
+                loading="lazy"
+                data-lightbox
+              />
+            </div>
+            <div class="showcase__info">
+              <span class="showcase__badge">Property Marketplace</span>
+              <h3>Browse Rumrs &amp; Wisprs — off Zillow.</h3>
+              <p>
+                The Property Marketplace gives advisors a private feed of pre-market
+                and off-market opportunities shared by trusted colleagues. No algorithms,
+                no public exposure — just real inventory from real advisors.
+              </p>
+              <ul class="showcase__points">
+                <li>Pre-market Rumrs before they go public</li>
+                <li>Off-market Wisprs shared advisor-to-advisor</li>
+                <li>Filter by location, type, and advisor network</li>
+                <li>Client data always protected</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary">Get Access</a>
+            </div>
+          </div>
+
+          <!-- Panel 1 — Buyer Marketplace -->
+          <div class="showcase__panel" data-panel="1">
+            <div class="showcase__screen">
+              <div class="showcase__screen-chrome">
+                <span class="mockup__dot mockup__dot--red"></span>
+                <span class="mockup__dot mockup__dot--yellow"></span>
+                <span class="mockup__dot mockup__dot--green"></span>
+              </div>
+              <img
+                src="images/Buyer Marketplace.png"
+                alt="Wispr Buyer Marketplace — share and discover active buyer needs"
+                class="showcase__img"
+                loading="lazy"
+                data-lightbox
+              />
+            </div>
+            <div class="showcase__info">
+              <span class="showcase__badge">Buyer Marketplace</span>
+              <h3>Share buyer wants. Find hidden inventory.</h3>
+              <p>
+                Post your active buyers' wants and needs so other advisors can match
+                them with off-market opportunities. Turn buyer demand into deal flow —
+                without any public listing required.
+              </p>
+              <ul class="showcase__points">
+                <li>Broadcast buyer needs to your advisor network</li>
+                <li>Discover properties before they're ever listed</li>
+                <li>Match buyers to Rumrs &amp; Wisprs instantly</li>
+                <li>Compliant and data-protected at every step</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary">Get Access</a>
+            </div>
+          </div>
+
+          <!-- Panel 2 — Private Groups -->
+          <div class="showcase__panel" data-panel="2">
+            <div class="showcase__screen">
+              <div class="showcase__screen-chrome">
+                <span class="mockup__dot mockup__dot--red"></span>
+                <span class="mockup__dot mockup__dot--yellow"></span>
+                <span class="mockup__dot mockup__dot--green"></span>
+              </div>
+              <img
+                src="images/Group.png"
+                alt="Wispr Private Groups — your personal Digital Caravan"
+                class="showcase__img"
+                loading="lazy"
+                data-lightbox
+              />
+            </div>
+            <div class="showcase__info">
+              <span class="showcase__badge">Private Groups</span>
+              <h3>Your personal Digital Caravan.</h3>
+              <p>
+                Create a private, invite-only group and collaborate with your most
+                trusted advisors. Share Rumrs, Wisprs, and buyer needs exclusively
+                with your inner circle — before anyone else sees them.
+              </p>
+              <ul class="showcase__points">
+                <li>Invite-only access — you control who joins</li>
+                <li>Share Rumrs, Wisprs &amp; buyer needs privately</li>
+                <li>Run your own digital Caravan from anywhere</li>
+                <li>All brokerages, nationwide</li>
+              </ul>
+              <a href="#cta" class="btn btn--primary">Get Access</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOW IT WORKS ───────────────────────────────── -->
+    <section class="how" id="platform" data-reveal-section>
+      <div class="how__inner">
+        <p class="label">A better model</p>
+        <h2>It's not about private versus public listings.</h2>
+        <p class="how__lead">
+          It's <strong>Advisor-Driven Access</strong> versus <strong>Direct-to-Consumer (DTC)</strong>.
+          Stop using Craigslist or FB Marketplace, errr we mean… Zillow to market your
+          clients' properties. Starting a Rumr or <span class="brand-wis">wis</span><span class="brand-pr">pr</span> creates
+          unique, high-quality value for your clients.
+        </p>
+
+        <div class="how__compare">
+          <div class="how__col how__col--bad">
+            <p class="how__col-label">Direct-to-Consumer</p>
+            <ul>
+              <li>Platform owns the client relationship</li>
+              <li>Algorithm controls your visibility</li>
+              <li>Zero data control</li>
+              <li>Advisor becomes a commodity</li>
+            </ul>
+          </div>
+          <div class="how__vs" aria-hidden="true">vs</div>
+          <div class="how__col how__col--good">
+            <p class="how__col-label">Advisor-Driven Access</p>
+            <ul>
+              <li>You own the client relationship</li>
+              <li>You control who sees what, when</li>
+              <li>Unparalleled data protection</li>
+              <li>Advisor is the value</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURES ───────────────────────────────────── -->
+    <section class="features" id="features" data-reveal-section>
+      <div class="features__inner">
+        <p class="label">First of its kind</p>
+        <h2>The compliant, nationwide, advisor-led listing platform.</h2>
+        <p class="features__intro">
+          Wispr is the first of its kind — imagine having <strong>100% control</strong> of marketing
+          properties without restrictions. Imagine a robust network of advisors sharing
+          unparalleled access for Off-Zillow listings. Consider how valuable you become during
+          a listing appointment when you highlight unique buyer wants &amp; needs across your
+          personal network of advisors.
+        </p>
+        <p class="features__network">
+          Advisors from <strong>ALL brokerages</strong>, across the <strong>ENTIRE country</strong>,
+          are connecting to discover Rumrs and Wisprs — Pre- and Off-Zillow inventory — share
+          buyer wants and needs, all while protecting client data.
+        </p>
+
+        <div class="features__grid">
+          <div class="feat-card">
+            <div class="feat-card__letter">R</div>
+            <h3>Rumrs</h3>
+            <p>Pre-market opportunities shared with trusted advisors — before anything hits a public platform.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card__letter">W</div>
+            <h3>Wisprs</h3>
+            <p>Off-Zillow inventory shared with the right advisors, at the right time, with full data control.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-card__letter">B</div>
+            <h3>Buyer Needs</h3>
+            <p>Share active buyer wants and discover hidden off-market opportunities faster than any public platform.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DATA CONTROL ───────────────────────────────── -->
+    <section class="control" id="control" data-reveal-section>
+      <div class="control__inner">
+        <div class="control__heading">
+          <p class="label">Unparalleled data control</p>
+          <h2>Share your listing information or buyer wants/needs with…</h2>
+          <p>You decide. Always.</p>
+        </div>
+        <div class="control__grid">
+          <div class="control-card">
+            <div class="control-card__num">01</div>
+            <h3>Who You Want!</h3>
+            <p>Choose exactly which advisors, groups, or connections see your listing or buyer needs. Your network, your rules.</p>
+          </div>
+          <div class="control-card">
+            <div class="control-card__num">02</div>
+            <h3>When You Want!</h3>
+            <p>Share early, gradually, or only when your client is ready. Timing is everything — and now it's yours.</p>
+          </div>
+          <div class="control-card">
+            <div class="control-card__num">03</div>
+            <h3>How Much You Want!</h3>
+            <p>Decide exactly how much detail is visible. Protect sensitive client and property data at every stage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RUMR MILL ───────────────────────────────────── -->
+    <section class="rumrmill">
+      <div class="rumrmill__inner">
+        <p class="label label--light">Rumr Mill</p>
+        <h2 class="rumrmill__headline">Unlock new relationships and dealflow opportunities for your clients.</h2>
+        <p class="rumrmill__sub">
+          Use <span class="brand-wis">wis</span><span class="brand-pr">pr</span>'s Rumr Mill to unlock new relationships
+          and dealflow opportunities for your clients — create visibility around early opportunities and
+          strengthen your advisor network before anything goes public.
+        </p>
+        <a href="#cta" class="btn btn--gold btn--large">Start a Rumr</a>
+      </div>
+    </section>
+
+    <!-- ── PRIVATE GROUPS ──────────────────────────────── -->
+    <section class="groups" id="groups" data-reveal-section>
+      <div class="groups__inner">
+        <div class="groups__copy">
+          <p class="label">Private Groups</p>
+          <h2>Create your own Private Group and run your personal Digital Caravan.</h2>
+          <p>Share and collaborate on buyer wants/needs, Rumrs, and Wisprs to a private Caravan-style group — give them a first look before anyone else sees it.</p>
+          <p>Your group. Your rules. Your deal flow.</p>
+          <a href="#cta" class="btn btn--primary">Start a Private Group</a>
+        </div>
+        <div class="groups__visual">
+          <div class="caravan-card">
+            <div class="caravan-card__header">
+              <span class="tag">Private Group</span>
+              <span class="caravan-card__badge">Members Only</span>
+            </div>
+            <h3 class="caravan-card__title">Downtown Denver Caravan</h3>
+            <ul class="caravan-card__items">
+              <li><span class="pill-type pill-type--rumr">Rumr</span><span>4BR Modern Colonial — Pre-Market</span></li>
+              <li><span class="pill-type pill-type--wispr">Wispr</span><span>Luxury Penthouse — Off-Market</span></li>
+              <li><span class="pill-type pill-type--buyer">Buyer</span><span>Family of 4, needs 3BR+ near schools</span></li>
+              <li><span class="pill-type pill-type--rumr">Rumr</span><span>Commercial Mixed-Use — Coming Soon</span></li>
+            </ul>
+            <p class="caravan-card__meta">12 advisors · Updated 2h ago</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BELIEF ──────────────────────────────────────── -->
+    <section class="belief">
+      <div class="belief__inner">
+        <blockquote class="belief__quote">
+          "We believe that Advisors are the glue to a thriving Real Estate industry!"
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ── SIGNUP FORM ─────────────────────────────────── -->
+    <section class="signup" id="cta">
+      <div class="signup__inner">
+        <div class="signup__pitch">
+          <p class="label label--light">Next-generation advisory network</p>
+          <h2 class="signup__headline">Click here to open your brokerage or team to the next-generation advisory network!</h2>
+          <p class="signup__sub">Advisors from ALL brokerages, across the ENTIRE country, are connecting to discover Rumrs and Wisprs — Pre- and Off-Zillow inventory — share buyer wants and needs, all while protecting client data.</p>
+          <ul class="signup__benefits">
+
+            <li>All brokerages welcome</li>
+            <li>100% compliant nationwide</li>
+            <li>Full data control from day one</li>
+          </ul>
+        </div>
+        <div class="signup__form-wrap">
+          <div class="signup__form-card">
+
+            <div class="signup__form-header">
+              <div>
+                <h3 class="signup__form-title">Request Access</h3>
+                <p class="signup__form-sub">We'll be in touch within 24 hours.</p>
+              </div>
+            </div>
+
+            <form class="signup__form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+              <input type="hidden" name="subject" value="New Wispr Network Signup" />
+              <input type="hidden" name="to" value="tom@wisprnetwork.com,emerson@wisprnetwork.com" />
+              <input type="hidden" name="redirect" value="thanks.html" />
+              <input type="checkbox" name="botcheck" style="display:none" />
+
+              <!-- Row 1: Name -->
+              <div class="form-row form-row--2">
+                <div class="form-group">
+                  <label for="fname">First Name <span>*</span></label>
+                  <input type="text" id="fname" name="first_name" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name <span>*</span></label>
+                  <input type="text" id="lname" name="last_name" placeholder="Smith" required />
+                </div>
+              </div>
+
+              <!-- Row 2: Email + Phone on same line -->
+              <div class="form-row form-row--2">
+                <div class="form-group">
+                  <label for="email">Email <span>*</span></label>
+                  <input type="email" id="email" name="email" placeholder="jane@brokerage.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+                </div>
+              </div>
+
+              <!-- Row 3: Brokerage + State -->
+              <div class="form-row form-row--2">
+                <div class="form-group">
+                  <label for="brokerage">Brokerage <span>*</span></label>
+                  <input type="text" id="brokerage" name="brokerage" placeholder="Your Brokerage" required />
+                </div>
+                <div class="form-group">
+                  <label for="state">State <span>*</span></label>
+                  <select id="state" name="state" required>
+                    <option value="" disabled selected>State</option>
+                    <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 4: Role -->
+              <div class="form-group">
+                <label for="role">I am a… <span>*</span></label>
+                <select id="role" name="role" required>
+                  <option value="" disabled selected>Select your role</option>
+                  <option>Agent / Realtor</option>
+                  <option>Broker / Owner</option>
+                  <option>Team Lead</option>
+                  <option>Broker Associate</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Row 5: Notes (compact) -->
+              <div class="form-group">
+                <label for="message">Anything to add?</label>
+                <textarea id="message" name="message" rows="2" placeholder="Team size, market, goals…"></textarea>
+              </div>
+
+              <button type="submit" class="signup__submit">
+                Request Access
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+
+              <div class="signup__trust">
+                <span>🔒 Your data is never shared</span>
+                <span>·</span>
+                <span>No credit card required</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <!-- Brand col -->
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="images/wispr_Standard.png" alt="Wispr" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">The advisor-led real estate network. Built for professionals who know that relationships close deals.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/wisprnetwork/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/100926797/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#facebook" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Nav col -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <nav class="footer__nav">
+          <a href="about.html">About Us</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#blog">Blog</a>
+        </nav>
+      </div>
+
+      <!-- Platform col -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Platform</h4>
+        <nav class="footer__nav">
+          <a href="#platform">Property Marketplace</a>
+          <a href="#platform">Buyer Marketplace</a>
+          <a href="#groups">Private Groups</a>
+          <a href="#control">Data Control</a>
+          <a href="#cta">Get Started</a>
+        </nav>
+      </div>
+
+      <!-- App + Contact col -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Download the App</h4>
+        <div class="footer__apps">
+          <a href="https://apps.apple.com/vn/app/wispr-network/id6479228847" target="_blank" rel="noopener" class="footer__app-btn">
+            <div class="footer__app-btn__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.08.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </div>
+            <div class="footer__app-btn__text">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.homewayz" target="_blank" rel="noopener" class="footer__app-btn">
+            <div class="footer__app-btn__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3.18 23.76c.3.17.64.24.98.22L15.34 12 11.66 8.32z" fill="#EA4335"/>
+                <path d="M20.54 10.27L17.9 8.76 13.9 12l4 4 2.63-1.5a1.8 1.8 0 000-4.23z" fill="#FBBC05"/>
+                <path d="M4.16.24A1.8 1.8 0 003 1.9v20.2a1.8 1.8 0 001.16 1.66L15.34 12z" fill="#4285F4"/>
+                <path d="M15.34 12l3.56-3.56-10.72-6.17A1.82 1.82 0 005.16.04L15.34 12z" fill="#34A853"/>
+              </svg>
+            </div>
+            <div class="footer__app-btn__text">
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+        <div class="footer__contact">
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:sales@wisprnetwork.com">sales@wisprnetwork.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.0 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <a href="tel:+16197776432">(619) 777-6432</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <p class="footer__copy">&copy; 2026 Wispr Network. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================
+       LIGHTBOX OVERLAY
+  ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="" />
+  </div>
+
+</body>
+</html>

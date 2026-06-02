@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | Wispr Network</title>
+  <meta name="description" content="Wispr Network Terms of Service — the rules and guidelines governing your use of our platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/png" href="images/wispr_Standard.png" />
+  <link rel="apple-touch-icon" href="images/wispr_Standard.png" />
+  <style>
+    .legal-hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      padding: clamp(100px, 14vw, 160px) var(--pad-x) clamp(60px, 8vw, 100px);
+      text-align: center;
+    }
+    .legal-hero__label { color: var(--gold); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+    .legal-hero h1 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 16px; }
+    .legal-hero__meta { color: rgba(255,255,255,.5); font-size: .9rem; }
+
+    .legal-body {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px var(--pad-x) 96px;
+    }
+
+    .legal-toc {
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius-sm);
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+    .legal-toc h2 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .legal-toc ol {
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 32px;
+    }
+    .legal-toc li { font-size: .9rem; color: var(--gray-dark); }
+    .legal-toc a { color: var(--navy); transition: color .15s; }
+    .legal-toc a:hover { color: var(--gold); }
+
+    .legal-section { margin-bottom: 52px; scroll-margin-top: 100px; }
+    .legal-section:last-child { margin-bottom: 0; }
+
+    .legal-section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      font-size: .75rem;
+      font-weight: 700;
+      font-family: var(--font-body);
+      flex-shrink: 0;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .legal-section h2 {
+      font-size: 1.28rem;
+      color: var(--navy);
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--gray-light);
+      display: flex;
+      align-items: center;
+    }
+    .legal-section h3 {
+      font-size: 1rem;
+      color: var(--navy);
+      font-family: var(--font-body);
+      font-weight: 700;
+      margin: 24px 0 10px;
+    }
+    .legal-section p {
+      font-size: .975rem;
+      line-height: 1.85;
+      color: var(--gray-dark);
+      margin-bottom: 16px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul, .legal-section ol {
+      padding-left: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .legal-section li {
+      font-size: .975rem;
+      line-height: 1.75;
+      color: var(--gray-dark);
+    }
+
+    .legal-callout {
+      background: rgba(0,29,72,.05);
+      border: 1px solid rgba(0,29,72,.1);
+      border-left: 3px solid var(--navy);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      font-size: .88rem;
+      color: var(--gray-dark);
+      line-height: 1.7;
+      margin: 16px 0;
+    }
+    .legal-callout strong { color: var(--navy); }
+
+    .legal-caps {
+      font-size: .875rem;
+      line-height: 1.75;
+      color: var(--gray-dark);
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+
+    .legal-contact-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+    .legal-contact-card a { color: var(--gold); }
+    .legal-contact-card strong { color: var(--white); }
+
+    .legal-rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+    .legal-right-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .legal-right-card h4 {
+      font-family: var(--font-body);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .legal-right-card p {
+      font-size: .85rem;
+      color: var(--gray);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .legal-toc ol { grid-template-columns: 1fr; }
+      .legal-rights-grid { grid-template-columns: 1fr; }
+      .legal-contact-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HEADER ────────────────────────────────────────── -->
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">
+        <img src="images/wispr_Standard.png" alt="Wispr" class="nav__logo-img" />
+      </a>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+        <li><a href="index.html#blog">Blogs</a></li>
+      </ul>
+
+      <div class="nav__auth">
+        <a href="#" class="nav__login">Login</a>
+        <a href="index.html#cta" class="btn btn--signup">
+          Sign Up
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.5 9h5M9 6.5l2.5 2.5L9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="legal-hero">
+      <p class="legal-hero__label">Legal</p>
+      <h1>Terms of Service</h1>
+      <p class="legal-hero__meta">HomeWayz, Inc. (Wispr or Wispr Network) &nbsp;·&nbsp; Last updated 2024</p>
+    </section>
+
+    <article class="legal-body">
+
+      <!-- Table of Contents -->
+      <nav class="legal-toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#acceptance">Acceptance &amp; Access</a></li>
+          <li><a href="#content">Content</a></li>
+          <li><a href="#accounts">Accounts and Access</a></li>
+          <li><a href="#license">License and Restrictions</a></li>
+          <li><a href="#privacy-link">Privacy &amp; Third Party Services</a></li>
+          <li><a href="#data-security">Data Protection and Security</a></li>
+          <li><a href="#copyright">Copyright Policy</a></li>
+          <li><a href="#termination">Termination</a></li>
+          <li><a href="#liability">Limitation of Liability</a></li>
+          <li><a href="#governing-law">Governing Law</a></li>
+          <li><a href="#indemnification">Indemnification</a></li>
+          <li><a href="#general">General</a></li>
+          <li><a href="#notifications">Notification Settings</a></li>
+        </ol>
+      </nav>
+
+      <!-- 1 -->
+      <div class="legal-section" id="intro">
+        <h2><span class="legal-section-number">1</span>Introduction</h2>
+        <p>
+          Welcome to Wispr ("Company", "we", "our", "us"). These Terms of Service (the "Terms" or "Terms of Service") govern your use of our platform (the "Service" or "Platform") that offers a private listing service for real estate agents and their clients who want access to off-market homes (the "Site").
+        </p>
+        <p>These Terms of Service apply to your use of the Site and Services.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="legal-section" id="acceptance">
+        <h2><span class="legal-section-number">2</span>Acceptance of these Terms; Access to the Site and Service</h2>
+        <p>
+          By accessing and using our Service through the Site, you agree to be bound by these Terms. In addition to these Terms, you must also comply with any other policies or guidelines related to the Service and Platform we make available for you. If you disagree with any part of the Terms or such policies, then you may not access the Service.
+        </p>
+        <p>Your rights to use and access the Site and Service are subject to the following restrictions:</p>
+        <ul>
+          <li>You may not use the Service or Platform for any illegal, harmful or abusive activity;</li>
+          <li>You shall not license, sell, rent, lease, transfer, assign, distribute, host, or otherwise commercially exploit the Site, whether in whole or in part, or any content displayed on the Site except as provided in these Terms;</li>
+          <li>You shall not modify, make derivative works of, disassemble, reverse compile or reverse engineer any part of the Site except as provided in these Terms or any other agreement between you and the Company;</li>
+          <li>You shall not access the Site in order to build a similar or competitive website, product, or service;</li>
+          <li>You shall not use the Service or Platform in a way that infringes, misappropriates or violates the rights of any third party;</li>
+          <li>Except as expressly stated in these Terms, no part of the Site may be copied, reproduced, distributed, republished, downloaded, displayed, posted or transmitted in any form or by any means;</li>
+          <li>You shall not interfere or disrupt the Service or Platform.</li>
+        </ul>
+        <p>
+          Unless otherwise indicated, any future release, update, or other addition to functionality of the Site shall be subject to these Terms. All copyright and other proprietary notices on the Site must be retained on all copies thereof.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="legal-section" id="content">
+        <h2><span class="legal-section-number">3</span>Content</h2>
+
+        <h3>User Content</h3>
+        <p>
+          Users (including you) may provide real estate information to the Service, including information, data and any other content you may upload, post, input, submit or use with the Site ("User Data"). The Site also contains information obtained from the Multiple Listing Network, governmental resources and other third parties ("Third Party Data"), and output from the Service based on such User Data and Third Party Data (the "Output Data," and together with the User Data and the Third Party Data, the "Content").
+        </p>
+        <p>
+          You are solely responsible for all User Data, and assume all risks associated with use of such User Data. You hereby represent and warrant to us that you have all rights, licenses and/or permissions to use and input the User Data into the Platform. Subject to any applicable laws, you retain your ownership in and to the User Data. You grant us a worldwide, royalty-free, and non-exclusive license to copy, distribute, and display User Data only for the purpose of providing the Service.
+        </p>
+
+        <h3>Content Accuracy</h3>
+        <p>
+          Most of the Content is not prepared by the Company, and the Company makes no representations regarding its accuracy. The use of the Service and Platform may involve Content that does not accurately represent places or facts, and should be checked for accuracy. Prior to relying on Content, you should review and evaluate the Content for accuracy, incorrectness, completeness and offensiveness. Content may reference third parties, but such reference should not be interpreted to mean that such third party endorses or is affiliated with the Company.
+        </p>
+
+        <h3>Our Ownership Rights</h3>
+        <p>
+          We and our affiliates own all rights, title and interest in and to the Service and the Platform, including all intellectual property rights, copyrights, patent, trademarks and trade secrets. Neither these Terms nor your access to the Site, Platform or Services transfers to you or any third party any rights, title or interest in or to such intellectual property rights, except as expressly granted in these Terms. We do not own the User Data and we do not own the Third Party Data.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="legal-section" id="accounts">
+        <h2><span class="legal-section-number">4</span>Accounts and Access</h2>
+
+        <h3>Registration</h3>
+        <p>
+          To use our Service, you may need to create an account, which requires you to provide accurate and complete information and keep your account information updated. You are responsible for maintaining the confidentiality of your account and password and for all activities that occur under your account. If you are creating an account on behalf of another person or entity, you are representing to us that you have the authority to access the Site, Platform and Service and accept these Terms on their behalf. We are not liable for any loss that you may incur as a result of someone else using your password or account. You agree to immediately notify us of any unauthorized use of your account.
+        </p>
+
+        <h3>Age</h3>
+        <p>
+          You must be at least 18 years of age to use the Service. If you are under 18 years of age, you are not permitted to use the Service, access the Site or Platform, or register for an account.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="legal-section" id="license">
+        <h2><span class="legal-section-number">5</span>License and Restrictions</h2>
+        <p>
+          Subject to these Terms, we grant you a non-exclusive, non-transferable, and limited right to access and use our Service. You may not rent, lease, lend, sell, redistribute, reproduce, or sublicense the Service. You may not copy, decompile, reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Service.
+        </p>
+      </div>
+
+      <!-- 6 -->
+      <div class="legal-section" id="privacy-link">
+        <h2><span class="legal-section-number">6</span>Privacy; Third Party Services</h2>
+        <p>
+          Your privacy is important to us. Please read our <a href="privacy.html">Privacy Policy</a> for information about how we collect, use, and disclose your personal information.
+        </p>
+        <p>
+          The Service, Platform or Site, may include third party software, products or services, as well as output from these third party services. Such third party services and third party output are subject to their own terms and we are not responsible for them.
+        </p>
+      </div>
+
+      <!-- 7 -->
+      <div class="legal-section" id="data-security">
+        <h2><span class="legal-section-number">7</span>Data Protection and Security</h2>
+        <p>
+          We implement security measures designed to protect your data from unauthorized access, disclosure, or accidental loss or destruction of your personal information, username, password, transaction information, and data stored on our Service. However, we cannot guarantee absolute security.
+        </p>
+      </div>
+
+      <!-- 8 -->
+      <div class="legal-section" id="copyright">
+        <h2><span class="legal-section-number">8</span>Copyright Policy</h2>
+        <p>
+          If you believe that your intellectual property rights have been infringed please send notice to <a href="mailto:requests@wisprnetwork.com">requests@wisprnetwork.com</a>. We reserve the right to disable, delete or terminate any accounts or content that we, in our sole discretion, believe violates these Terms or is alleged to infringe on the rights of others.
+        </p>
+        <p>If providing a written claim, please include:</p>
+        <ul>
+          <li>A description of the copyrighted work subject to such claim;</li>
+          <li>A description of where the allegedly infringing material is located on the Platform;</li>
+          <li>Contact information including address, telephone number, and email address associated with your account;</li>
+          <li>A statement that your claim is accurate and, under penalty of perjury, that you are the copyright holder or authorized to act on such copyright holder's behalf; and that the claim is made on the good-faith belief that the use is not authorized;</li>
+          <li>Your physical or electronic signature.</li>
+        </ul>
+      </div>
+
+      <!-- 9 -->
+      <div class="legal-section" id="termination">
+        <h2><span class="legal-section-number">9</span>Termination</h2>
+        <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, the following:</p>
+        <ul>
+          <li>Your breach of the Terms or any other policy provided to you by the Company;</li>
+          <li>To comply with any applicable laws;</li>
+          <li>Your use poses risk to us or any third party;</li>
+          <li>The expiration of any business account or subscription pursuant to any agreement between you and the Company; or</li>
+          <li>Your delinquency in payment of any fees due on your account.</li>
+        </ul>
+      </div>
+
+      <!-- 10 -->
+      <div class="legal-section" id="liability">
+        <h2><span class="legal-section-number">10</span>Limitation of Liability; Warranties</h2>
+        <div class="legal-caps">
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE COMPANY OR ITS AFFILIATES BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY LOST PROFITS, LOST DATA, COSTS OF PROCUREMENT OF SUBSTITUTE PRODUCTS, OR ANY INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL OR PUNITIVE DAMAGES ARISING FROM OR RELATING TO YOUR USE OF, OR INABILITY TO USE, THE SITE, PLATFORM OR SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR CUMULATIVE LIABILITY TO YOU FOR ANY DAMAGES ARISING FROM OR RELATED TO THE SITE WILL AT ALL TIMES BE LIMITED TO A MAXIMUM OF ONE HUNDRED US DOLLARS (U.S. $100).
+        </div>
+        <div class="legal-caps">
+          THE SITE, INCLUDING ALL CONTENT, SOFTWARE, PRODUCTS, SERVICES, MATERIALS, AND INFORMATION MADE AVAILABLE ON OR ACCESSED THROUGH THE SITE, IS PROVIDED ON AN "AS-IS" AND "AS AVAILABLE" BASIS. TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE EXPRESSLY DISCLAIM ANY AND ALL WARRANTIES AND CONDITIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING ALL WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, ACCURACY, OR NON-INFRINGEMENT.
+        </div>
+        <p>
+          To the extent any country or state does not allow the disclaimer of certain warranties, some or all of the terms in this section may not apply to you or your use of the Service, and you may have additional rights.
+        </p>
+      </div>
+
+      <!-- 11 -->
+      <div class="legal-section" id="governing-law">
+        <h2><span class="legal-section-number">11</span>Governing Law and Jurisdiction</h2>
+        <p>
+          These Terms shall be governed and construed in accordance with the laws of the <strong>State of California</strong>, without regard to its conflict of law provisions.
+        </p>
+        <p>
+          You and the Company hereby agree to try to resolve any disputes prior to taking any formal legal actions against the other party. Any claim or dispute arising from your access and use of the Site, Platform or Service shall be resolved in the State of California, and you submit to the personal and exclusive jurisdiction thereof.
+        </p>
+      </div>
+
+      <!-- 12 -->
+      <div class="legal-section" id="indemnification">
+        <h2><span class="legal-section-number">12</span>Indemnification</h2>
+        <p>
+          To the extent permitted by applicable law, you agree to indemnify and hold Wispr, our affiliates, officers, employees and agents, harmless, from and against any costs, losses, liabilities, and expenses (including reasonable attorneys' fees) from any claim or demand made by any third party due to or arising out of or related to (a) your use of the Site, Content, Platform or Service, (b) your User Data, (c) your violation of these Terms; or (d) your violation of applicable laws or regulations.
+        </p>
+      </div>
+
+      <!-- 13 -->
+      <div class="legal-section" id="general">
+        <h2><span class="legal-section-number">13</span>General</h2>
+
+        <h3>Changes to these Terms</h3>
+        <p>
+          We may update these Terms and our Services from time to time as our Services develop and improve. If possible, we will try to give you advanced notice of any changes. All changes will be effective as soon as they are posted to the Site. If you do not agree to the changes to these Terms, you must stop using the Service and contact us to terminate your account.
+        </p>
+
+        <h3>Assignment</h3>
+        <p>
+          You may not assign or transfer your rights or obligations under these Terms. We may assign our rights and obligations under these Terms to any affiliate, subsidiary or successor in interest freely and without your consent. Any assignment in violation of this section will be void.
+        </p>
+
+        <h3>Enforcement</h3>
+        <p>
+          Failure to enforce any provision of these Terms shall not be considered a waiver thereof. If any provision of these Terms is determined to be invalid or unenforceable, that provision will be enforced to the maximum extent permitted and will not affect the enforceability of any other provisions herein.
+        </p>
+      </div>
+
+      <!-- 14 -->
+      <div class="legal-section" id="notifications">
+        <h2><span class="legal-section-number">14</span>Notification Settings</h2>
+
+        <h3>SMS Notifications</h3>
+        <p>
+          By providing your phone number during sign-up for our services, you expressly consent to receive text message notifications from HomeWayz, Inc. (DBA Wispr or the Wispr Network), including transactional messages (e.g., order confirmations, appointment reminders) and, where applicable, promotional messages (e.g., offers, updates). These messages may be sent using an automated system. Your consent to receive text messages is not a condition of purchasing any goods or services.
+        </p>
+
+        <h3>Message Frequency and Costs</h3>
+        <p>
+          You will receive notifications based on your account activity and preferences, other network agent requests, system notifications of matches between you and other agents, and general communications regarding the network. Message and data rates may apply, as determined by your mobile carrier.
+        </p>
+
+        <h3>Opt-Out Instructions</h3>
+        <p>
+          You may opt out of receiving text messages at any time by replying <strong>"STOP"</strong> to any message we send. Upon receiving your opt-out request, we will send a final confirmation message and cease further text communications, except as required by law. Under the California Consumer Privacy Act (CCPA), if you opt out, we will not send opt-in requests for at least 12 months.
+        </p>
+
+        <h3>California Privacy Rights (CCPA)</h3>
+        <p>If you are a California resident, under the CCPA, you have the following rights:</p>
+
+        <div class="legal-rights-grid">
+          <div class="legal-right-card">
+            <h4>Know</h4>
+            <p>Request a report of the personal information we collect about you and how it is used or shared.</p>
+          </div>
+          <div class="legal-right-card">
+            <h4>Delete</h4>
+            <p>Request deletion of your personal information, subject to certain exceptions.</p>
+          </div>
+          <div class="legal-right-card">
+            <h4>Opt-Out of Data Sales</h4>
+            <p>Opt out of the sale of your personal information to third parties.</p>
+          </div>
+          <div class="legal-right-card">
+            <h4>Non-Discrimination</h4>
+            <p>We will not discriminate against you for exercising any of these rights.</p>
+          </div>
+        </div>
+
+        <div class="legal-callout">
+          To exercise your CCPA rights, contact us at <a href="mailto:requests@wisprnetwork.com"><strong>requests@wisprnetwork.com</strong></a> or visit <a href="privacy.html"><strong>wisprnetwork.com/privacy-policy</strong></a>. We will verify your identity before processing requests.
+        </div>
+
+        <h3>Data Use and Sharing</h3>
+        <p>
+          We collect your phone number to provide and improve our services, including sending text notifications. We do not sell your personal information without your explicit consent. Your information may be shared with third-party service providers solely to facilitate our text notification program, subject to strict confidentiality agreements.
+        </p>
+
+        <h3>Contact Us</h3>
+        <div class="legal-contact-card">
+          <p><strong>Email:</strong> <a href="mailto:requests@wisprnetwork.com">requests@wisprnetwork.com</a></p>
+          <p><strong>Full Privacy Policy:</strong> <a href="privacy.html">wisprnetwork.com/privacy-policy</a></p>
+          <p>
+            <strong>Mailing Address:</strong><br />
+            Po. Box 311<br />
+            197 Woodland Pkwy Ste 104<br />
+            San Marcos, CA 92069
+          </p>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo-link">
+          <img src="images/wispr_Standard.png" alt="Wispr" class="footer__logo-img" />
+        </a>
+        <p class="footer__tagline">The advisor-led real estate network. Built for professionals who know that relationships close deals.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/wisprnetwork/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/100926797/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#facebook" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <nav class="footer__nav">
+          <a href="about.html">About Us</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="index.html#contact">Contact Us</a>
+          <a href="index.html#blog">Blog</a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Platform</h4>
+        <nav class="footer__nav">
+          <a href="index.html#platform">Property Marketplace</a>
+          <a href="index.html#platform">Buyer Marketplace</a>
+          <a href="index.html#groups">Private Groups</a>
+          <a href="index.html#control">Data Control</a>
+          <a href="index.html#cta">Get Started</a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__col-title">Download the App</h4>
+        <div class="footer__apps">
+          <a href="https://apps.apple.com/vn/app/wispr-network/id6479228847" target="_blank" rel="noopener" class="footer__app-btn">
+            <div class="footer__app-btn__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.08.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </div>
+            <div class="footer__app-btn__text">
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </div>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.homewayz" target="_blank" rel="noopener" class="footer__app-btn">
+            <div class="footer__app-btn__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3.18 23.76c.3.17.64.24.98.22L15.34 12 11.66 8.32z" fill="#EA4335"/>
+                <path d="M20.54 10.27L17.9 8.76 13.9 12l4 4 2.63-1.5a1.8 1.8 0 000-4.23z" fill="#FBBC05"/>
+                <path d="M4.16.24A1.8 1.8 0 003 1.9v20.2a1.8 1.8 0 001.16 1.66L15.34 12z" fill="#4285F4"/>
+                <path d="M15.34 12l3.56-3.56-10.72-6.17A1.82 1.82 0 005.16.04L15.34 12z" fill="#34A853"/>
+              </svg>
+            </div>
+            <div class="footer__app-btn__text">
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </div>
+          </a>
+        </div>
+        <div class="footer__contact">
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:sales@wisprnetwork.com">sales@wisprnetwork.com</a>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.0 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <a href="tel:+16197776432">(619) 777-6432</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__bottom-inner">
+        <p class="footer__copy">&copy; 2026 Wispr Network. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
