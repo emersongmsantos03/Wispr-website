@@ -81,9 +81,9 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var section  = entry.target;
-          var heading  = section.querySelector('h2, h3, .label');
+          var heading  = section.querySelector('h2, h3');
           var children = section.querySelectorAll(
-            '.feat-card, .control-card, .how__col, .why-card, .groups__copy > *, .groups__visual, .mockup'
+            '.control-card, .how__col, .why-card, .groups__copy > *, .groups__visual, .mockup'
           );
 
           if (heading && !heading.hasAttribute('data-reveal')) {
@@ -117,7 +117,7 @@
      CARD SPOTLIGHT — subtle light follows cursor
   ───────────────────────────────────────────────────────── */
   function setupSpotlight() {
-    var cards = document.querySelectorAll('.why-card, .feat-card, .control-card');
+    var cards = document.querySelectorAll('.why-card, .control-card');
 
     cards.forEach(function (card) {
       card.addEventListener('pointermove', function (e) {
