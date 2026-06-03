@@ -280,6 +280,13 @@
       .pricing-cards { grid-template-columns: 1fr; max-width: 440px; }
       .p-card--highlight { margin-top: 16px; }
     }
+    @media (max-width: 480px) {
+      .pricing-cards { padding: 48px var(--pad-x) 64px; max-width: 100%; }
+      .p-card { padding: 32px 24px 28px; }
+      .p-price__amount { font-size: 3rem; }
+      .pricing-guarantee { gap: 24px; padding-bottom: 64px; }
+      .guarantee-item { flex: 1 1 100%; }
+    }
   </style>
 </head>
 

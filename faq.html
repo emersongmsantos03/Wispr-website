@@ -310,9 +310,24 @@
     }
     .faq-contact__email:hover { border-color: var(--gold); color: var(--gold); }
 
+    @media (max-width: 768px) {
+      .faq-search-row { flex-direction: column; align-items: stretch; }
+      .faq-contact-link { flex-direction: row; justify-content: center; }
+      .faq-body { padding: 48px var(--pad-x) 72px; }
+      .faq-section { margin-bottom: 48px; }
+    }
     @media (max-width: 600px) {
       .faq-a-inner { padding-left: 22px; }
       .faq-contact { padding: 36px 24px; }
+    }
+    @media (max-width: 480px) {
+      .faq-q { padding: 14px 16px; font-size: .9rem; gap: 12px; }
+      .faq-a-inner { padding: 14px 16px 18px; font-size: .9rem; }
+      .faq-contact { padding: 28px 20px; }
+      .faq-contact h2 { font-size: 1.35rem; }
+      .faq-contact__actions { flex-direction: column; align-items: center; }
+      .faq-section-header { flex-wrap: wrap; }
+      .faq-section-count { margin-left: 0; margin-top: 4px; }
     }
   </style>
 </head>
