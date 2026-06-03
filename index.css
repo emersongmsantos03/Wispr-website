@@ -1516,8 +1516,7 @@ p  { font-family: var(--font-body);    color: var(--gray); line-height: 1.75; }
 
 /* ── Mockup gentle float animation ───────────────────────── */
 .js .hero__mockup-wrap {
-  animation: heroFadeIn .8s cubic-bezier(.22,1,.36,1) .5s both,
-             mockupFloat 5s ease-in-out 1.3s infinite;
+  animation: heroFadeIn .8s cubic-bezier(.22,1,.36,1) .5s both;
 }
 
 @keyframes mockupFloat {
