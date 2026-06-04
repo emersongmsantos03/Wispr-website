@@ -426,29 +426,70 @@
   /* ─────────────────────────────────────────────────────────
      LIGHTBOX — click screenshot to view full size
   ───────────────────────────────────────────────────────── */
+  function formatPhone(value) {
+    var digits = value.replace(/\D/g, '').slice(0, 10);
+
+    if (digits.length <= 3) {
+      return digits ? '(' + digits : '';
+    }
+
+    if (digits.length <= 6) {
+      return '(' + digits.slice(0, 3) + ') ' + digits.slice(3);
+    }
+
+    return '(' + digits.slice(0, 3) + ') ' + digits.slice(3, 6) + '-' + digits.slice(6);
+  }
+
+  function setupPhoneMask() {
+    document.querySelectorAll('[data-phone]').forEach(function (input) {
+      input.addEventListener('input', function () {
+        input.value = formatPhone(input.value);
+      });
+    });
+  }
+
   function setupContactForm() {
     var form = document.querySelector('[data-contact-form]');
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
+      var submitButton = form.querySelector('button[type="submit"]');
+      var status = form.querySelector('[data-contact-status]');
+
       e.preventDefault();
 
-      var data = new FormData(form);
-      var topic = data.get('topic') || 'Website contact';
-      var body = [
-        'Name: ' + (data.get('name') || ''),
-        'Email: ' + (data.get('email') || ''),
-        'Phone: ' + (data.get('phone') || ''),
-        'Brokerage / Team: ' + (data.get('brokerage') || ''),
-        'Topic: ' + topic,
-        '',
-        'Message:',
-        data.get('message') || ''
-      ].join('\n');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-      window.location.href = 'mailto:emerson@wisprnetwork.com?subject=' +
-        encodeURIComponent('Wispr Contact: ' + topic) +
-        '&body=' + encodeURIComponent(body);
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.classList.add('is-loading');
+      }
+
+      if (status) {
+        status.textContent = 'Sending your message...';
+        status.classList.remove('contact__form-note--success');
+      }
+
+      window.setTimeout(function () {
+        form.submit();
+      }, 80);
+
+      window.setTimeout(function () {
+        form.reset();
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.classList.remove('is-loading');
+        }
+
+        if (status) {
+          status.textContent = 'Thanks. Your message was sent to the Wispr team.';
+          status.classList.add('contact__form-note--success');
+        }
+      }, 900);
     });
   }
 
@@ -506,6 +547,7 @@
     setupShowcaseTabs();
     setupLightbox();
     setupSamePageLinks();
+    setupPhoneMask();
     setupContactForm();
     setupLazyImages();
   });

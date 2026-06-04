@@ -658,7 +658,13 @@
             </div>
           </div>
 
-          <form class="contact__form" data-contact-form action="mailto:emerson@wisprnetwork.com" method="post" enctype="text/plain">
+          <form class="contact__form" data-contact-form action="https://formsubmit.co/emerson@wisprnetwork.com" method="POST" target="contact-submit-frame">
+            <input type="hidden" name="_subject" value="New Wispr website contact" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_cc" value="tom@wisprnetwork.com" />
+            <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <div class="form-row form-row--2">
               <div class="form-group">
                 <label for="contact-name">Name <span>*</span></label>
@@ -673,7 +679,7 @@
             <div class="form-row form-row--2">
               <div class="form-group">
                 <label for="contact-phone">Phone</label>
-                <input type="tel" id="contact-phone" name="phone" placeholder="(555) 000-0000" />
+                <input type="tel" id="contact-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" inputmode="tel" data-phone />
               </div>
               <div class="form-group">
                 <label for="contact-brokerage">Brokerage / Team</label>
@@ -704,8 +710,9 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
 
-            <p class="contact__form-note">Submitting opens your email app with the message ready to send.</p>
+            <p class="contact__form-note" data-contact-status aria-live="polite">Your message is sent directly to the Wispr team.</p>
           </form>
+          <iframe class="form-frame" name="contact-submit-frame" title="Contact form submission"></iframe>
         </div>
       </div>
     </section>
