@@ -49,7 +49,33 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     SCROLL REVEAL — [data-reveal] elements fade + slide up
+     REVEAL HELPERS
+  ───────────────────────────────────────────────────────── */
+
+  // Wraps a heading in an overflow:hidden mask so the text
+  // can slide up from below the visible edge (clip reveal).
+  function wrapRevealMask(el) {
+    if (!el || !el.parentNode) return;
+    if (el.parentElement && el.parentElement.classList.contains('reveal-mask')) return;
+    var mask = document.createElement('div');
+    mask.className = 'reveal-mask';
+    el.parentNode.insertBefore(mask, el);
+    mask.appendChild(el);
+    el.classList.add('reveal-type--text');
+  }
+
+  // True if any ancestor between el and stopAt has data-reveal.
+  function hasRevealAncestor(el, stopAt) {
+    var node = el.parentElement;
+    while (node && node !== stopAt) {
+      if (node.hasAttribute('data-reveal')) return true;
+      node = node.parentElement;
+    }
+    return false;
+  }
+
+  /* ─────────────────────────────────────────────────────────
+     SCROLL REVEAL — [data-reveal] elements
   ───────────────────────────────────────────────────────── */
   function setupReveal() {
     var elements = document.querySelectorAll('[data-reveal]');
@@ -65,7 +91,7 @@
           observer.unobserve(el);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     elements.forEach(function (el) { observer.observe(el); });
   }
@@ -77,38 +103,84 @@
     var sections = document.querySelectorAll('[data-reveal-section]');
     if (!sections.length || !window.IntersectionObserver) return;
 
+    var CHILD_SELECTORS = [
+      '.control-card',
+      '.why-card',
+      '.partners__title',
+      '.partners__marquee',
+      '.groups__copy > *',
+      '.groups__visual',
+      '.contact__eyebrow',
+      '.contact__content > p',
+      '.contact__methods',
+      '.contact__form-card',
+      '.control__heading > p',
+      '.features__intro',
+      '.features__reach',
+      '.mockup'
+    ].join(',');
+
+    // Maps child type to its reveal direction
+    function getRevealOrigin(child) {
+      var cl = child.classList;
+      if (cl.contains('why-card') || cl.contains('control-card')) return 'scale';
+      if (cl.contains('groups__visual') || cl.contains('contact__form-card')) return 'right';
+      if (cl.contains('partners__marquee')) return 'fade';
+      var parent = child.parentElement;
+      if (parent) {
+        if (parent.classList.contains('groups__copy') ||
+            parent.classList.contains('contact__content')) return 'left';
+      }
+      if (cl.contains('contact__eyebrow') || cl.contains('contact__methods')) return 'left';
+      return null;
+    }
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          var section  = entry.target;
-          var heading  = section.querySelector('h2, h3');
-          var children = section.querySelectorAll(
-            '.control-card, .how__col, .why-card, .groups__copy > *, .groups__visual, .mockup'
-          );
+        if (!entry.isIntersecting) return;
 
-          if (heading && !heading.hasAttribute('data-reveal')) {
-            heading.classList.add('reveal-heading');
+        var section = entry.target;
+        var heading = section.querySelector('h2, h3');
+
+        var headingEl = (heading &&
+                         !heading.hasAttribute('data-reveal') &&
+                         !hasRevealAncestor(heading, section)) ? heading : null;
+
+        // Capture children BEFORE DOM manipulation so selectors still match
+        var children = Array.prototype.filter.call(
+          section.querySelectorAll(CHILD_SELECTORS),
+          function (el) {
+            return el !== headingEl &&
+                   !el.hasAttribute('data-reveal') &&
+                   !el.classList.contains('reveal-mask') &&
+                   !hasRevealAncestor(el, section);
           }
+        );
 
-          children.forEach(function (child, i) {
-            child.style.transitionDelay = (i * 90) + 'ms';
-            child.classList.add('reveal-child');
-          });
-
-          // Trigger on next frame so delay is set first
-          requestAnimationFrame(function () {
-            children.forEach(function (child) {
-              child.classList.add('is-revealed');
-            });
-            if (heading && !heading.hasAttribute('data-reveal')) {
-              heading.classList.add('is-revealed');
-            }
-          });
-
-          observer.unobserve(section);
+        if (headingEl) {
+          headingEl.style.transitionDelay = '0ms';
+          headingEl.classList.add('reveal-heading');
         }
+
+        // Assign origins and stagger delays
+        // Children start 160ms after heading for a clear narrative rhythm
+        var childBase = headingEl ? 160 : 0;
+        children.forEach(function (child, i) {
+          var origin = getRevealOrigin(child);
+          if (origin) child.setAttribute('data-reveal-origin', origin);
+          child.style.transitionDelay = (childBase + i * 80) + 'ms';
+          child.classList.add('reveal-child');
+        });
+
+        // Single rAF — browser paints initial state first, then transition fires
+        requestAnimationFrame(function () {
+          if (headingEl) headingEl.classList.add('is-revealed');
+          children.forEach(function (child) { child.classList.add('is-revealed'); });
+        });
+
+        observer.unobserve(section);
       });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
 
     sections.forEach(function (s) { observer.observe(s); });
   }
@@ -136,38 +208,113 @@
   }
 
   /* ─────────────────────────────────────────────────────────
-     HERO PARALLAX — background shifts at 30% scroll speed
-  ───────────────────────────────────────────────────────── */
-  function setupParallax() {
-    var hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    function onScroll() {
-      if (window.scrollY > window.innerHeight) return;
-      hero.style.setProperty('--parallax-y', (window.scrollY * 0.28) + 'px');
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  /* ─────────────────────────────────────────────────────────
      COUNTER ANIMATION — [data-count] numbers count up
   ───────────────────────────────────────────────────────── */
+  function setupPartnerMarquee() {
+    var marquee = document.querySelector('.partners__marquee');
+    var track   = document.querySelector('.partners__track');
+    var set     = document.querySelector('.partners__set');
+    if (!marquee || !track || !set) return;
+
+    var cycleWidth = 0;
+    var x = 0;
+    var lastTs = null;
+    var isDragging = false;
+    var pointerId = null;
+    var startPointerX = 0;
+    var startTrackX = 0;
+    var pixelsPerSecond = 80;
+
+    function normalize(value) {
+      if (!cycleWidth) return value;
+      value = value % cycleWidth;
+      if (value > 0) value -= cycleWidth;
+      return value;
+    }
+
+    function render() {
+      track.style.transform = 'translate3d(' + x + 'px, 0, 0)';
+    }
+
+    function measure() {
+      cycleWidth = set.getBoundingClientRect().width || 0;
+      if (!cycleWidth) return;
+      pixelsPerSecond = cycleWidth / 34;
+      x = normalize(x);
+      render();
+    }
+
+    function tick(ts) {
+      if (lastTs === null) lastTs = ts;
+      var dt = Math.min((ts - lastTs) / 1000, 0.05);
+      lastTs = ts;
+
+      if (!isDragging) {
+        x = normalize(x - (pixelsPerSecond * dt));
+        render();
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    function onPointerDown(e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      isDragging = true;
+      pointerId = e.pointerId;
+      startPointerX = e.clientX;
+      startTrackX = x;
+      lastTs = null;
+      marquee.classList.add('is-dragging');
+      if (marquee.setPointerCapture) marquee.setPointerCapture(pointerId);
+      if (e.pointerType === 'mouse') e.preventDefault();
+    }
+
+    function onPointerMove(e) {
+      if (!isDragging || e.pointerId !== pointerId) return;
+      x = normalize(startTrackX + (e.clientX - startPointerX));
+      render();
+    }
+
+    function stopDragging(e) {
+      if (!isDragging || (e && e.pointerId !== pointerId)) return;
+      isDragging = false;
+      pointerId = null;
+      lastTs = null;
+      marquee.classList.remove('is-dragging');
+    }
+
+    track.style.animation = 'none';
+    measure();
+    requestAnimationFrame(tick);
+
+    marquee.addEventListener('pointerdown', onPointerDown);
+    marquee.addEventListener('pointermove', onPointerMove);
+    marquee.addEventListener('pointerup', stopDragging);
+    marquee.addEventListener('pointercancel', stopDragging);
+    marquee.addEventListener('lostpointercapture', stopDragging);
+    window.addEventListener('resize', measure);
+    window.addEventListener('load', measure);
+  }
+
   function animateCounter(el) {
-    var raw    = el.getAttribute('data-count');
-    var suffix = el.getAttribute('data-suffix') || '';
-    var prefix = el.getAttribute('data-prefix') || '';
-    var target = parseFloat(raw);
-    var isFloat = raw.indexOf('.') !== -1;
-    var duration = 1600;
-    var start  = null;
+    var raw      = el.getAttribute('data-count');
+    var suffix   = el.getAttribute('data-suffix') || '';
+    var prefix   = el.getAttribute('data-prefix') || '';
+    var target   = parseFloat(raw);
+    var isFloat  = raw.indexOf('.') !== -1;
+    var duration = 1800;
+    var start    = null;
+
+    function fmt(n) {
+      if (isFloat) return n.toFixed(1);
+      return Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
 
     function step(ts) {
       if (!start) start = ts;
       var progress = Math.min((ts - start) / duration, 1);
-      var eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      var value    = target * eased;
-      el.textContent = prefix + (isFloat ? value.toFixed(1) : Math.floor(value)) + suffix;
+      var eased    = 1 - Math.pow(1 - progress, 4); // ease-out quart — faster start, dramatic finish
+      el.textContent = prefix + fmt(target * eased) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     }
 
@@ -178,6 +325,7 @@
     var counters = document.querySelectorAll('[data-count]');
     if (!counters.length || !window.IntersectionObserver) return;
 
+    // Low threshold so counters start in sync with the reveal fade-in
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -185,7 +333,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 
     counters.forEach(function (c) { observer.observe(c); });
   }
@@ -269,6 +417,32 @@
   /* ─────────────────────────────────────────────────────────
      LIGHTBOX — click screenshot to view full size
   ───────────────────────────────────────────────────────── */
+  function setupContactForm() {
+    var form = document.querySelector('[data-contact-form]');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var data = new FormData(form);
+      var topic = data.get('topic') || 'Website contact';
+      var body = [
+        'Name: ' + (data.get('name') || ''),
+        'Email: ' + (data.get('email') || ''),
+        'Phone: ' + (data.get('phone') || ''),
+        'Brokerage / Team: ' + (data.get('brokerage') || ''),
+        'Topic: ' + topic,
+        '',
+        'Message:',
+        data.get('message') || ''
+      ].join('\n');
+
+      window.location.href = 'mailto:emerson@wisprnetwork.com?subject=' +
+        encodeURIComponent('Wispr Contact: ' + topic) +
+        '&body=' + encodeURIComponent(body);
+    });
+  }
+
   function setupLightbox() {
     var box   = document.getElementById('lightbox');
     var img   = document.getElementById('lightboxImg');
@@ -316,13 +490,28 @@
     setupReveal();
     setupSectionReveal();
     setupSpotlight();
-    setupParallax();
+    setupPartnerMarquee();
     setupCounters();
     setupSmoothScroll();
     setupMockupPlayer();
     setupShowcaseTabs();
     setupLightbox();
     setupSamePageLinks();
+    setupContactForm();
+    setupLazyImages();
   });
+
+  /* ─────────────────────────────────────────────────────────
+     LAZY IMAGE FADE — images fade in once loaded
+  ───────────────────────────────────────────────────────── */
+  function setupLazyImages() {
+    document.querySelectorAll('img[loading="lazy"]').forEach(function (img) {
+      if (img.complete) {
+        img.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function () { img.classList.add('loaded'); });
+      }
+    });
+  }
 
 }());
