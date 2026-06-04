@@ -1829,12 +1829,11 @@ a.contact-method:hover {
 }
 
 /* ── Logo switching ───────────────────────────────────
-   --dark  = navy+gold logo, for light backgrounds
+   --dark  = navy logo (filter applied), for light backgrounds
    --white = all-white logo, for dark backgrounds
-   Default: show dark, hide white.
-   Flip when: page is dark-hero OR header has scrolled (navy bg).
 ──────────────────────────────────────────────────────── */
 .nav__logo-img--white { display: none; }
+
 
 .page--dark-hero .nav__logo-img--dark,
 .header--scrolled  .nav__logo-img--dark { display: none; }
