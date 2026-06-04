@@ -9,20 +9,19 @@
     if (!header) return;
 
     var logo       = document.getElementById('nav-logo');
-    var isDarkPage = document.body.classList.contains('page--dark-hero');
-    var STD_SRC    = 'images/wispr_Standard.png';
+    var isDarkHeader = document.body.classList.contains('blog-page');
+    var STD_SRC    = 'images/wispr_navy.png';
     var WHITE_SRC  = 'images/wispr_logo_white.png';
 
     function onScroll() {
       var scrolled = window.scrollY > 12;
       header.classList.toggle('header--scrolled', scrolled);
 
-      // Swap logo: dark pages always white; light pages white when scrolled
+      // Swap logo only for pages that use a dark/transparent header.
       if (logo) {
-        var useWhite = isDarkPage || scrolled;
+        var useWhite = isDarkHeader;
         logo.src = useWhite ? WHITE_SRC : STD_SRC;
-        // When Standard is shown on light bg, filter white→navy so "wis" is visible
-        logo.style.filter = useWhite ? '' : 'sepia(1) saturate(7) hue-rotate(198deg) brightness(0.28)';
+        logo.style.filter = '';
       }
     }
 
