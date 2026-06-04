@@ -19,7 +19,10 @@
 
       // Swap logo: dark pages always white; light pages white when scrolled
       if (logo) {
-        logo.src = (isDarkPage || scrolled) ? WHITE_SRC : STD_SRC;
+        var useWhite = isDarkPage || scrolled;
+        logo.src = useWhite ? WHITE_SRC : STD_SRC;
+        // When Standard is shown on light bg, filter white→navy so "wis" is visible
+        logo.style.filter = useWhite ? '' : 'sepia(1) saturate(7) hue-rotate(198deg) brightness(0.28)';
       }
     }
 
