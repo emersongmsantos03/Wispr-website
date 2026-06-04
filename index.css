@@ -1828,18 +1828,7 @@ a.contact-method:hover {
   box-shadow: 0 2px 24px rgba(0,0,0,.10);
 }
 
-/* ── Logo switching ───────────────────────────────────
-   --dark  = navy logo (filter applied), for light backgrounds
-   --white = all-white logo, for dark backgrounds
-──────────────────────────────────────────────────────── */
-.nav__logo-img--white { display: none; }
-
-
-.page--dark-hero .nav__logo-img--dark,
-.header--scrolled  .nav__logo-img--dark { display: none; }
-
-.page--dark-hero .nav__logo-img--white,
-.header--scrolled  .nav__logo-img--white { display: block; }
+/* Logo: swap to white on scroll (light pages only — JS handles src swap) */
 .header--scrolled .nav {
   height: 60px;
 }

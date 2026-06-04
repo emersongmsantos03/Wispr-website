@@ -8,11 +8,18 @@
     var header = document.querySelector('.header');
     if (!header) return;
 
+    var logo       = document.getElementById('nav-logo');
+    var isDarkPage = document.body.classList.contains('page--dark-hero');
+    var STD_SRC    = 'images/wispr_Standard.png';
+    var WHITE_SRC  = 'images/wispr_logo_white.png';
+
     function onScroll() {
-      if (window.scrollY > 12) {
-        header.classList.add('header--scrolled');
-      } else {
-        header.classList.remove('header--scrolled');
+      var scrolled = window.scrollY > 12;
+      header.classList.toggle('header--scrolled', scrolled);
+
+      // Swap logo: dark pages always white; light pages white when scrolled
+      if (logo) {
+        logo.src = (isDarkPage || scrolled) ? WHITE_SRC : STD_SRC;
       }
     }
 
