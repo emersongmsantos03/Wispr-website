@@ -87,6 +87,13 @@ p  { font-family: var(--font-body);    color: var(--gray); line-height: 1.75; }
 }
 .btn--gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(137,116,71,.45); }
 
+.btn--white {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 4px 18px rgba(0,29,72,.2);
+}
+.btn--white:hover { background: #f0f4fa; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,29,72,.3); }
+
 .btn--hero-ghost {
   background: rgba(255,255,255,.1);
   color: var(--white);
@@ -947,12 +954,12 @@ p  { font-family: var(--font-body);    color: var(--gray); line-height: 1.75; }
   background: rgba(255,255,255,.04);
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.how__thead-topic { padding: 16px 24px; }
+.how__thead-topic { padding: 2px 24px; }
 .how__thead-col {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 24px;
+  padding: 2px 24px;
   font-size: .78rem;
   font-weight: 700;
   letter-spacing: .08em;
@@ -1799,6 +1806,7 @@ a.contact-method:hover {
   font-family: Noteworthy, 'Chalkboard SE', cursive;
   font-style: normal;
   font-weight: 700;
+  font-size: 1.15em;
 }
 .brand-rumr {
   white-space: nowrap;
@@ -1814,7 +1822,8 @@ a.contact-method:hover {
 .why .brand-wis,
 .features .brand-wis,
 .control .brand-wis,
-.groups .brand-wis { color: var(--navy); }
+.groups .brand-wis,
+.partners .brand-wis { color: var(--navy); }
 
 /* Rumr Mill dark bg — keep white/gold */
 .rumrmill .brand-wis { color: #ffffff; }
