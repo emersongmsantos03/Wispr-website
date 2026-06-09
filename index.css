@@ -2226,6 +2226,7 @@ img:not([loading]) { opacity: 1; }
   opacity: 0;
   transition: opacity .2s;
 }
+.contact-modal[hidden] { display: none; }
 .contact-modal.is-open { opacity: 1; }
 .contact-modal__inner {
   background: #fff;
