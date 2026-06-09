@@ -2211,6 +2211,66 @@ img:not([loading]) { opacity: 1; }
 }
 
 /* =============================================
+   SUCCESS MODAL
+============================================= */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0, 15, 40, .55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.contact-modal.is-open { opacity: 1; }
+.contact-modal__inner {
+  background: #fff;
+  border-radius: 20px;
+  padding: 48px 40px 40px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,.18);
+}
+.contact-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: background .15s;
+}
+.contact-modal__close:hover { background: #e2e8f0; }
+.contact-modal__icon {
+  margin-bottom: 20px;
+}
+.contact-modal__inner h3 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.contact-modal__inner p {
+  color: #64748b;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.contact-modal__btn { width: 100%; justify-content: center; }
+body.modal-open { overflow: hidden; }
+
+/* =============================================
    LIGHTBOX
 ============================================= */
 .showcase__img { cursor: zoom-in; }

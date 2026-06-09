@@ -448,14 +448,53 @@
     });
   }
 
-  function setupContactForm() {
-    var form = document.querySelector('[data-contact-form]');
+  var _lastFocused = null;
+
+  function openModal(modal) {
+    if (!modal) return;
+    _lastFocused = document.activeElement;
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    window.requestAnimationFrame(function () {
+      modal.classList.add('is-open');
+      var closeBtn = modal.querySelector('[data-modal-close]');
+      if (closeBtn) closeBtn.focus();
+    });
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    window.setTimeout(function () {
+      modal.hidden = true;
+      if (_lastFocused && typeof _lastFocused.focus === 'function') _lastFocused.focus();
+    }, 200);
+  }
+
+  function setupModal() {
+    var modal = document.querySelector('[data-modal]');
+    if (!modal) return;
+    modal.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+      btn.addEventListener('click', function () { closeModal(modal); });
+    });
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal(modal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal(modal);
+    });
+  }
+
+  function setupLeadForm() {
+    var form  = document.querySelector('[data-lead-form]');
+    var modal = document.querySelector('[data-modal]');
     if (!form) return;
 
     form.addEventListener('submit', function (e) {
       var submitButton = form.querySelector('button[type="submit"]');
-      var status = form.querySelector('[data-contact-status]');
-
       e.preventDefault();
 
       if (!form.checkValidity()) {
@@ -468,10 +507,7 @@
         submitButton.classList.add('is-loading');
       }
 
-      if (status) {
-        status.textContent = 'Sending your message...';
-        status.classList.remove('contact__form-note--success');
-      }
+      openModal(modal);
 
       window.setTimeout(function () {
         form.submit();
@@ -479,17 +515,11 @@
 
       window.setTimeout(function () {
         form.reset();
-
         if (submitButton) {
           submitButton.disabled = false;
           submitButton.classList.remove('is-loading');
         }
-
-        if (status) {
-          status.textContent = 'Thanks. Your message was sent to the Wispr team.';
-          status.classList.add('contact__form-note--success');
-        }
-      }, 900);
+      }, 700);
     });
   }
 
@@ -548,7 +578,8 @@
     setupLightbox();
     setupSamePageLinks();
     setupPhoneMask();
-    setupContactForm();
+    setupModal();
+    setupLeadForm();
     setupLazyImages();
   });
 

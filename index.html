@@ -617,7 +617,7 @@
             </div>
           </div>
 
-          <form class="contact__form" data-contact-form action="https://formsubmit.co/emerson@wisprnetwork.com" method="POST" target="contact-submit-frame">
+          <form class="contact__form" data-lead-form action="https://formsubmit.co/emerson@wisprnetwork.com" method="POST" target="contact-submit-frame">
             <input type="hidden" name="_subject" value="New Wispr website contact" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
@@ -669,14 +669,28 @@
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
 
-            <p class="contact__form-note" data-contact-status aria-live="polite">Your message is sent directly to the <span class="brand-rumr"><span class="brand-wis">wis</span><span class="brand-pr">pr</span></span> team.</p>
           </form>
-          <iframe class="form-frame" name="contact-submit-frame" title="Contact form submission"></iframe>
+          <iframe class="form-frame" name="contact-submit-frame" title="Contact form submission" aria-hidden="true"></iframe>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- ── SUCCESS MODAL ─────────────────────────────────── -->
+  <div class="contact-modal" data-modal hidden aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+    <div class="contact-modal__inner">
+      <button class="contact-modal__close" data-modal-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="contact-modal__icon" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="var(--gold)" stroke-width="2"/><path d="M9 16.5l4.5 4.5 9-9" stroke="var(--gold)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3 id="modal-title">Message sent!</h3>
+      <p>Thanks for reaching out. The <span class="brand-rumr"><span class="brand-wis">wis</span><span class="brand-pr">pr</span></span> team will follow up within one business day.</p>
+      <button class="btn btn--gold contact-modal__btn" data-modal-close>Done</button>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 
