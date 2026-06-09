@@ -911,11 +911,13 @@ p  { font-family: var(--font-body);    color: var(--gray); line-height: 1.75; }
   z-index: 1;
 }
 
-.how__header { margin-bottom: 56px; }
-.how__header h2 { color: var(--white); max-width: 680px; margin: 12px 0 20px; }
+.how__header { margin-bottom: 56px; text-align: center; }
+.how__header h2 { color: var(--white); max-width: 680px; margin: 12px auto 20px; }
 .how__lead {
   font-size: 1.05rem;
   max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
   color: rgba(255,255,255,.62);
   line-height: 1.8;
 }
@@ -942,90 +944,82 @@ p  { font-family: var(--font-body);    color: var(--gray); line-height: 1.75; }
 
 /* Table */
 .how__compare {
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(0,29,72,.08);
+  background: #ffffff;
+  box-shadow: 0 4px 32px rgba(0,0,0,.10);
 }
 
 /* Header row */
 .how__thead {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
-  background: rgba(255,255,255,.04);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,29,72,.08);
 }
-.how__thead-topic { padding: 2px 24px; }
+.how__thead-topic { padding: 10px 28px; }
 .how__thead-col {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 2px 24px;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  border-left: 1px solid rgba(255,255,255,.06);
+  gap: 10px;
+  padding: 10px 28px;
+  border-left: 1px solid rgba(0,29,72,.08);
 }
-.how__thead-col--bad  { color: #f87171; }
-.how__thead-col--good { color: var(--gold); }
+.how__thead-col--bad  { }
+.how__thead-col--good { }
 
 /* Data rows */
 .how__row {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(0,29,72,.06);
   transition: background .15s;
 }
 .how__row--last { border-bottom: none; }
-.how__row:hover { background: rgba(255,255,255,.02); }
+.how__row:hover { background: rgba(0,29,72,.02); }
 
 .how__row-topic {
-  padding: 22px 24px;
-  font-size: .8rem;
+  padding: 18px 28px;
+  font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.35);
+  color: #334155;
   display: flex;
   align-items: center;
-  border-right: 1px solid rgba(255,255,255,.06);
 }
 
 .how__row-bad,
 .how__row-good {
-  padding: 22px 24px;
-  font-size: .93rem;
-  line-height: 1.55;
+  padding: 18px 28px;
+  font-size: .92rem;
+  line-height: 1.5;
   display: flex;
   align-items: center;
-  border-left: 1px solid rgba(255,255,255,.06);
+  gap: 10px;
+  border-left: 1px solid rgba(0,29,72,.06);
 }
 
 .how__row-bad {
-  color: rgba(255,255,255,.38);
-  background: rgba(220,38,38,.03);
-  position: relative;
+  color: #475569;
 }
 .how__row-bad::before {
   content: '✕';
-  font-size: .7rem;
-  color: #f87171;
-  margin-right: 10px;
+  font-size: .65rem;
+  color: #ef4444;
   flex-shrink: 0;
-  opacity: .7;
 }
 
 .how__row-good {
-  color: rgba(255,255,255,.88);
-  font-weight: 500;
-  background: rgba(137,116,71,.05);
-  position: relative;
+  color: var(--navy);
+  font-weight: 600;
 }
 .how__row-good::before {
   content: '✓';
   font-size: .8rem;
   color: var(--gold);
-  margin-right: 10px;
+  font-weight: 700;
   flex-shrink: 0;
 }
 
@@ -1823,11 +1817,23 @@ a.contact-method:hover {
 .features .brand-wis,
 .control .brand-wis,
 .groups .brand-wis,
-.partners .brand-wis { color: var(--navy); }
+.partners .brand-wis,
+.contact .brand-wis,
+.how__compare .brand-wis { color: var(--navy); }
 
 /* Rumr Mill dark bg — keep white/gold */
 .rumrmill .brand-wis { color: #ffffff; }
 .rumrmill .brand-pr  { color: var(--gold); }
+
+/* ── Keyword underline — why-card emphasis words ─────────── */
+.kw-underline {
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--navy);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
 
 /* ── Hero headline gold accent ───────────────────────────── */
 .hero__headline-gold {
