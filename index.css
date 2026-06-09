@@ -1819,7 +1819,8 @@ a.contact-method:hover {
 .groups .brand-wis,
 .partners .brand-wis,
 .contact .brand-wis,
-.how__compare .brand-wis { color: var(--navy); }
+.how__compare .brand-wis,
+.contact-modal .brand-wis { color: var(--navy); }
 
 /* Rumr Mill dark bg — keep white/gold */
 .rumrmill .brand-wis { color: #ffffff; }
